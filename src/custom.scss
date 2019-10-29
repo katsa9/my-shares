@@ -1,0 +1,20 @@
+$theme-colors: (
+  "primary": #5A30C1,
+  "light": #D8D8D8,
+  "secondary": rgba(90, 48, 193, 0.41),
+  "dark": #0D061E 
+);
+
+$body-bg: rgb(255, 255, 255); 
+$body-color: rgb(32, 32, 32); 
+$container-color: theme-color("light");
+$border-radius: 1px; 
+$brand-primary:theme-color("primary");
+$font-family-sans-serif: "Avenir Next", sans-serif;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+.navbar-text {
+  text-align: left;
+}
