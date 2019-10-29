@@ -11,7 +11,7 @@ export function receiveCredit (credit) {
   }
 }
 
-export function addCredit (credit) {
+export function addSomeCredit (credit) {
   return {
     type: ADD_CREDIT,
     credit
@@ -35,12 +35,12 @@ export function handleGetCredit () {
 //thunk
 export function handleAddCredit (amount) {
   let credit = {
-    credit: amount
+    value: amount
   }
   return (dispatch, getState) => {
     dispatch(showLoading())
     return addCredit(amount)
-      .then(() => dispatch(addCredit(credit)))
+      .then(() => dispatch(addSomeCredit(credit)))
       .then(() => dispatch(hideLoading()))
       .catch((e) => {
         console.warn('Error in handleAddCredit', e)

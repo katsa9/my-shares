@@ -12,32 +12,28 @@ export function receivePortfolio (shares) {
   }
 }
 
-function buyShares (toBuy) {
+function buyShares (updatedPortfolio) {
   return {
     type: BUY_SHARES,
-    toBuy
+    updatedPortfolio
   }
 }
 
-function sellShares (toSell) {
+function sellShares (updatedPortfolio) {
   return {
     type: SELL_SHARES,
-    toSell
+    updatedPortfolio
   }
 }
 
 //thunk
 export function handleBuyShares (ticker, amount) {
-  let toBuy = {
-    ticker,
-    amount
-  }
   return (dispatch, getState) => {
     dispatch(showLoading())
     return buy({
       ticker,
       amount
-    }).then(() => dispatch(buyShares(toBuy)))
+    }).then((updatedPortfolio) => dispatch(buyShares(updatedPortfolio)))
       .then(() => dispatch(hideLoading()))
       .catch((e) => {
         console.warn('Error in handleBuyShares', e)
@@ -48,16 +44,12 @@ export function handleBuyShares (ticker, amount) {
 
 //thunk
 export function handleSellShares (ticker, amount) {
-  let toSell = {
-    ticker,
-    amount
-  }
   return (dispatch, getState) => {
     dispatch(showLoading())
     return sell({
       ticker,
       amount
-    }).then(() => dispatch(sellShares(toSell)))
+    }).then((updatedPortfolio) => dispatch(sellShares(updatedPortfolio)))
       .then(() => dispatch(hideLoading()))
       .catch((e) => {
         console.warn('Error in handleSellShares', e)

@@ -9,10 +9,11 @@ export default function credit(state = {}, action) {
       }
     case ADD_CREDIT:
       const { credit } = action
-      
       return {
         ...state,
-        credit: state.credit + credit
+        credit: {
+          value: state.credit.value + credit.value
+        }
       }
     default:
       return state
