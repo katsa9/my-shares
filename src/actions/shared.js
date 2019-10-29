@@ -5,6 +5,7 @@ import { receiveCredit } from './credit'
 
 //thunk action creator
 export function handleInitialData() {
+  console.log("in handle initial data");
   return (dispatch, getState) => {
     dispatch(showLoading())
     return getInitialData()

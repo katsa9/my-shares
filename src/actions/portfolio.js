@@ -5,10 +5,10 @@ export const RECEIVE_SHARES = "RECEIVE_SHARES"
 export const BUY_SHARES = "BUY_SHARES"
 export const SELL_SHARES = "SELL_SHARES"
 
-export function receivePortfolio (shares) {
+export function receivePortfolio (portfolio) {
   return {
     type: RECEIVE_SHARES,
-    shares
+    portfolio
   }
 }
 
