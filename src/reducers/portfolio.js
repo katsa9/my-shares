@@ -3,6 +3,9 @@ import { RECEIVE_SHARES, BUY_SHARES, SELL_SHARES } from '../actions/portfolio'
 export default function portfolio(state = {}, action) {
   switch (action.type) {
     case RECEIVE_SHARES:
+      if(action.portfolio.empty) {
+        return state
+      }
       return {
         ...state,
         ...action.portfolio
@@ -10,12 +13,12 @@ export default function portfolio(state = {}, action) {
     case BUY_SHARES:
       return {
         ...state,
-        portfolio: action.updatedPortfolio
+        ...action.updatedPortfolio
       }
       case SELL_SHARES:
       return {
         ...state,
-        portfolio: action.updatedPortfolio
+        ...action.updatedPortfolio
       }
     default:
       return state
