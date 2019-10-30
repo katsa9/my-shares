@@ -10,7 +10,6 @@ $body-color: rgb(32, 32, 32);
 $container-color: theme-color("light");
 $border-radius: 1px; 
 $brand-primary:theme-color("primary");
-$font-family-sans-serif: "Avenir Next", sans-serif;
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
@@ -61,7 +60,6 @@ ul {
 .btn-primary {
   background:theme-color("primary");
   border-radius: 4px;
-  font-family: AvenirNext-Regular;
   font-size: 16px;
   color: white;
   text-align: center;
@@ -77,4 +75,5 @@ background-color: theme-color("dark");
 .btn-primary:disabled {
 background: theme-color("secondary");
 cursor: default;
+border: none;
 }

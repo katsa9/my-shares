@@ -30,9 +30,6 @@ function sellShares (updatedPortfolio) {
 export function handleBuyShares (ticker, amount) {
   return (dispatch, getState) => {
     dispatch(showLoading());
-    console.log("in buy shares")
-    console.log(ticker);
-    console.log(amount);
     return buy({
       ticker,
       amount

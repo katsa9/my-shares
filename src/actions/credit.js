@@ -34,13 +34,15 @@ export function handleGetCredit () {
 
 //thunk
 export function handleAddCredit (amount) {
-  let credit = {
-    value: amount
-  }
+ 
   return (dispatch, getState) => {
     dispatch(showLoading())
+    console.log(amount)
+    // let creditToAdd = {
+    //   value: amount
+    // }
     return addCredit(amount)
-      .then(() => dispatch(addSomeCredit(credit)))
+      .then(() => dispatch(addSomeCredit({value:amount})))
       .then(() => dispatch(hideLoading()))
       .catch((e) => {
         console.warn('Error in handleAddCredit', e)

@@ -35,8 +35,8 @@ class BuySellForm extends Component {
       dispatch(handleSellShares(ticker, amount))
     }
     this.setState(() => ({
-      optionOne: '',
-      optionTwo: '',
+      ticker: '',
+      amount: '',
       toHome: true
     }))
   }

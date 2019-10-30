@@ -24,11 +24,13 @@ export const getCredit = () =>
   fetch(`${api}/credit`, { headers })
     .then(res => res.json())
 
-export const addCredit = (amount) =>
-  fetch(`${api}/addCredit?amount=${amount}`, {
+export const addCredit = (amount) => {
+console.log(`${api}/addCredit?amount=${amount}`);
+  return fetch(`${api}/addCredit?amount=${amount}`, {
     method: 'PUT',
     headers: headers
-  }).then(res => res.json())
+  })
+}
 
 export function getInitialData () {
   return Promise.all([

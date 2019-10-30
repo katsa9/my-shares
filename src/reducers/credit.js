@@ -12,7 +12,7 @@ export default function credit(state = {}, action) {
       return {
         ...state,
         credit: {
-          value: state.credit.value + credit.value
+          value: state.credit ? state.credit.value + credit.value : credit.value
         }
       }
     default:
