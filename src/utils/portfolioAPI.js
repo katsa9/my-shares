@@ -8,14 +8,14 @@ export const getPortfolio = () =>
   fetch(`${api}/portfolio`, { headers })
     .then(res => res.json())
 
-export const buy = (ticker, amount) =>
-  fetch(`${api}/buy?ticker=${ticker}&amount=${amount}`, {
+export const buy = (share) =>
+  fetch(`${api}/buy?ticker=${share.ticker}&amount=${share.amount}`, {
     method: 'PUT',
     headers: headers
   }).then(res => res.json())
 
-export const sell = (ticker, amount) =>
-  fetch(`${api}/sell?ticker=${ticker}&amount=${amount}`, {
+export const sell = (share) =>
+  fetch(`${api}/sell?ticker=${share.ticker}&amount=${share.amount}`, {
     method: 'PUT',
     headers: headers
   }).then(res => res.json())

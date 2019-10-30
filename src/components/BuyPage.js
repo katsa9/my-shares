@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import BuySellForm from './BuySellForm'
 
 class BuyPage extends Component {
   render() {
     return (
     <div>
-      Buy page
+      Buy page (title component)
+      <BuySellForm buyMode={true}/>
     </div>
     )
   }
