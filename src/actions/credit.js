@@ -37,10 +37,6 @@ export function handleAddCredit (amount) {
  
   return (dispatch, getState) => {
     dispatch(showLoading())
-    console.log(amount)
-    // let creditToAdd = {
-    //   value: amount
-    // }
     return addCredit(amount)
       .then(() => dispatch(addSomeCredit({value:amount})))
       .then(() => dispatch(hideLoading()))

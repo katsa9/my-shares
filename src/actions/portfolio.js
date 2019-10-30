@@ -52,6 +52,7 @@ export function handleSellShares (ticker, amount) {
     }).then((updatedPortfolio) => dispatch(sellShares(updatedPortfolio)))
       .then(() => dispatch(hideLoading()))
       .catch((e) => {
+        console.log(e);
         console.warn('Error in handleSellShares', e)
         alert('There was an error while selling shares. Try again')
       })

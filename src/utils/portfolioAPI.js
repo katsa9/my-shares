@@ -4,6 +4,13 @@ const headers = {
   'Accept': 'application/json'
 }
 
+function handleErrors(response) {
+  if (!response.ok) {
+      throw Error(response.statusText);
+  }
+  return response;
+}
+
 export const getPortfolio = () =>
   fetch(`${api}/portfolio`, { headers })
     .then(res => res.json())
@@ -35,7 +42,7 @@ console.log(`${api}/addCredit?amount=${amount}`);
 export function getInitialData () {
   return Promise.all([
     getPortfolio(),
-    getCredit,
+    getCredit(),
   ]).then(([portfolio, credit]) => ({
     portfolio,
     credit

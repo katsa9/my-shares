@@ -78,6 +78,20 @@ cursor: default;
 border: none;
 }
 
-h5 {
+h4,h5 {
   color: theme-color("primary");
+}
+
+.btn-green {
+  @extend .btn-primary;
+  background-color: #3C7B3B;
+  font-size: 20px;
+  border: none;
+}
+
+.btn-red {
+  @extend .btn-primary;
+  background-color: #CE0E0E;
+  font-size: 20px;
+  border: none;
 }

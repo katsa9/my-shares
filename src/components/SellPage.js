@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import BuySellForm from './BuySellForm'
+import Header from './Header';
 
 class SellPage extends Component {
   render() {
+    let text = "SELL SHARES";
     return (
     <div>
-      Sell page (title component)
+    <Header heading={text}/>
       <BuySellForm buyMode={false}/>
     </div>
     )

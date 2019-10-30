@@ -10,6 +10,7 @@ export function handleInitialData() {
     dispatch(showLoading())
     return getInitialData()
     .then(({portfolio, credit}) => {
+      console.log(credit)
       dispatch(receivePortfolio(portfolio))
       dispatch(receiveCredit(credit))
       dispatch(hideLoading())
