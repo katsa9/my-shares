@@ -47,6 +47,9 @@ class TopNav extends Component {
              </NavLink>
             </li>
           </ul>
+            <span className="navbar-text float-right">
+            Logged in as Luke Skywalker
+            </span>
         </div>
       </nav>
     )

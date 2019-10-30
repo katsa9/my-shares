@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Asset from './Asset'
 
 class AssetList extends Component {
   render() {
     const { portfolio } = this.props;
     console.log("portfolio", portfolio);
+
     return (
-    <div className="center">
-      AssetList
-      <div>
-            {Object.values(portfolio).map((item) => (
-              <button>{item.ticker}</button>
+    <div>
+          <ul>
+          {Object.values(portfolio).map((item) => (
+            <li key={item.ticker}>
+                <Asset
+                  asset={item} />
+              </li>
             ))}
-          </div>
-    </div>
+          </ul>
+        </div>
     )
   }
 }

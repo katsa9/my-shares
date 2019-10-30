@@ -11,14 +11,16 @@ class Dashboard extends Component {
 
   render () {
     return (
-       <Router>
-       <TopNav />
-      <div className="center py-4 my-2">
+      <Router>  
+        <TopNav />
+        <div className="dark-container py-4">
+          <div className="light-container center py-4 my-2">
             <Route path='/' exact component={AssetList} />
-            <Route path='/buy' component={BuyPage} /> 
+            <Route path='/buy' component={BuyPage} />
             <Route path='/sell' component={SellPage} />
             <Route path='/addCredit' component={AddCreditPage} />
-      </div>
+          </div>
+        </div>
       </Router>
     )
   }
